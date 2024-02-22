@@ -7,18 +7,38 @@
     <title>Signup</title>
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: rgb(133, 139, 139);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        form{
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px; 
+            padding: 20px; 
+            background-color: rgba(236, 198, 198, 0.8); 
+            border-radius: 10px;
+        }
+
+        .center h2 {
+            text-align: center;
+            padding-bottom: 20px; 
+            border-bottom: 1px solid #e774c5;
+        }
+
+        form {
             max-width: 300px;
-            margin: 50 auto;
-            padding: 200px;
-            background-color: blanchedalmond;
+            margin: 0 auto;
+            padding: 20px; 
+            background-color: rgb(180, 142, 148);
             border-radius: 5px;
         }
-        
+
         input {
             width: 100%;
             padding: 10px;
@@ -26,32 +46,47 @@
             box-sizing: border-box;
         }
 
-        button{
-            background-color: rgb(16, 17, 17);
-            color: aliceblue;
+        button {
+            width: 100%; 
+            background-color: #8c9191; 
+            color: #ece5e5; 
             padding: 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
 
-    </style>
+        .pass a {
+            color: #f0dae7;
+            text-decoration: none;
+        }
 
+        .login_link a {
+            color: #f0e6e9; 
+        }
+    </style>
 </head>
 <body>
-    <h2>Signup</h2>
-    <form action="signup.php" method="post">
-        <label for="signupUser">Username/Email</label>
-        <input type="text" id="signupUser" name="signupUser" required>
-        
-        <label for="signupPass">Password</label>
-        <input type="password" id="signupPass" name="signupPass" required>
+    <div class="center">
+        <h2>Signup</h2>
+        <form action="signup.php" method="post">
+            <label for="signupUser">Email</label>
+            <input type="text" id="signupUser" name="signupUser" required>
+            
+            <label for="signupPass">Password</label>
+            <input type="password" id="signupPass" name="signupPass" required>
 
-        <button type="submit">Signup</button>
-        <button type="reset">Reset</button>
+            <label for="signupConfirmPass">Confirm Password</label>
+            <input type="password" id="signupConfirmPass" name="signupConfirmPass" required>
 
-    </form>
+            <input name="submit" type="submit" value="Signup">
 
+            <div class="login_link">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </form>
 
+        <link rel="stylesheet" type="text/css" href="signup.css">
+    </div>
 </body>
 </html>
