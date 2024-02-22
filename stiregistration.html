@@ -8,68 +8,111 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: antiquewhite;
+            background-color: #e4cccc;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 200vh;
         }
 
-        form{
-            max-width: 400px;
-            padding: 20px;
-            background-color: rgb(222, 192, 224);
+        .container {
+            background-color: #fcfafa;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            width: 500px;
         }
-        
-        label{
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
             font-weight: bold;
             display: block;
             margin-bottom: 5px;
-
-
         }
-        input {
-            width: 100%;
+
+        input, select {
+            width: calc(100% - 22px);
             padding: 10px;
             margin-bottom: 15px;
             box-sizing: border-box;
-            border: 1px solid;
+            border: 1px solid #ccc;
             border-radius: 5px;
         }
 
-        button{
-            background-color: rgb(16, 17, 17);
-            color: aliceblue;
+        button {
+            background-color: #927e87;
+            color: #fff;
             padding: 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
         }
 
+        button:hover {
+            background-color: #e7ebee;
+        }
     </style>
-
 </head>
 <body>
-    <h2>Registration Form</h2>
-    <form>
-        <label for="studentN">Student Name</label>
-        <input type="text" id="studentN" name="studentN" placeholder="Enter the name">
-        
-        <label for="course">Course</label>
-        <input type="text" id="course" name="course" placeholder="Enter the course">
+    <div class="container">
+        <h2>STI Registration Form</h2>
+        <form>
+            <label for="Name">First Name</label>
+            <input type="text" id="Name" name="Name" placeholder="Enter your first name">
 
-        <label for="dateofbirth">Date of Birth</label>
-        <input type="date" id="dateofbirth" name="dateofbirth"
+            <label for="mName">Middle Name</label>
+            <input type="text" id="mName" name="mName" placeholder="Enter your middle name">
 
-        <button type="submit">Login</button>
+            <label for="lName">Last Name</label>
+            <input type="text" id="lName" name="lName" placeholder="Enter your last name">
 
+            <label for="sex">Sex</label>
+            <select id="sex" name="sex" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
 
-    </form>
+            <label for="dateofbirth">Date of Birth</label>
+            <input type="date" id="dateofbirth" name="dateofbirth" required>
 
+            <div class="field-row">
+                <label class="form-label">Your Level</label>
+                <select class="form-dropdown field">
+                    <option value="">Select</option>
+                    <option value="1st Year"> 1st Year </option>
+                    <option value="2nd Year"> 2nd Year </option>
+                    <option value="3rd Year"> 3rd Year </option>
+                    <option value="4th Year"> 4th Year </option>
+                </select>
+            </div>
 
+            <div class="field-row">
+                <label class="program">Program</label>
+                <select class="field form-dropdown">
+                    <option value="">Select</option>
+                    <option value="BS in Computer Science">BS in Computer Science</option>
+                    <option value="BS in Information Technology">BS in Information Technology</option>
+                    <option value="BS in Information Systems">BS in Information Systems</option>
+                    <option value="BS in Computer Engineering">BS in Computer Engineering</option>
+                    <option value="BS in Business Administration">BS in Business Administration</option>
+                </select>
+            </div>
+
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
+
